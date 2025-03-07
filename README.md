@@ -1,25 +1,31 @@
-# Programmer: a LLM-based system that codes
+# Programmer
 
-This system is benchmarked on SWE-bench. 
+## Run an example
+```python
+poetry run python do_things.py --agent al-mod --tasks kg-gen-c88908c.jsonl
+```
 
-## Getting started
+## Why Programmer is useful
+This is a very simple playground to run an agent of your choice in a folder of your choice.
 
-- Clone `.env.example` into `.env` and fill in your keys and urls
-- Run `poetry install`
-- Run `poetry run python -m main`
+- `envs/`: every folder in `envs/` is an environment that the agent has access to.
+- `agents/`: every folder in `agents/` is an agent. Every agent should have a `main.py` which should include a `main()` function entrypoint that takes in a Task.
+- `tasks/`: every `.jsonl` in `tasks/` is a set of tasks. `tasks/models.py` contains the Task model. 
 
-## Files
+Run an agent in an environment on 1+ tasks: 
+```python
+poetry run python do_things.py --agent <agent_folder_name> --tasks <task_jsonl_name>
+```
 
-Important files and folders
-- `main.py`: main entry point to run
-- `steps/` folder: steps taken to solve an issue
-- `.txt` files: are the ids of SWE-bench instances
-- `output_preds/` folder: where the generated patches are saved, alongside other systems' outputs for comparison
+where `agent_folder_name` is the exact name of the subfolder in `agents/` and `task_jsonl_name` is the exact name of the `.jsonl` in `tasks/`, including the `.jsonl` extension. Note that every task requires specifying an `env`.
 
-## Steps
+## Stack
 
-1. Get 4 sets of edit locations
-2. For each set, generate 16 patches: 15 by temperature sampling and 1 greedy
-3. Of the 64 patches, select by majority vote the best 1
+- Python: for runtime
+- Poetry: for Python package management
+- DSPy: for structuring language model calls
+- LiteLLM: via DSPy, for LLM routing
 
-After this, we'll want to add validation via regression testing.
+## Notes
+
+This is meant to be kept super simple! 😌 🐈
