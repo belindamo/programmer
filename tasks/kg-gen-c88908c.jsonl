@@ -1,1 +1,1 @@
-{"problem": "the cluster=True is returning an error", "env": "kg-gen-c88908c"}
+{"problem": "when setting cluster=True, it is returning an error", "env": "kg-gen-c88908c"}

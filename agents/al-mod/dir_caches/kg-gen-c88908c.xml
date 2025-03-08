@@ -1,0 +1,57 @@
+<directory>
+  <file name="pyproject.toml" description="The `pyproject.toml` file defines the project &quot;kg-gen,&quot; version 0.1.4, authored by Belinda Mo, which aims to extract a knowledge graph using LLMs from text or message arrays, requires Python 3.10 or higher, and lists its dependencies, license information, and links to its homepage and issue tracker." />
+  <file name="README.md" description="The README file for `kg-gen` provides an overview of a tool designed to extract knowledge graphs from various text inputs using AI, along with usage examples, installation instructions, and details on supported models and functionalities such as clustering, chunking, and aggregating graphs." />
+  <folder name="dist">
+    <file name="kg_gen-0.1.4.tar.gz" description="The file &quot;kg_gen-0.1.4.tar.gz&quot; is a compressed archive containing version 0.1.4 of the kg_gen package, which is likely used for generating knowledge graphs or related data structures." />
+    <file name="kg_gen-0.1.4-py3-none-any.whl" description="The file &quot;kg_gen-0.1.4-py3-none-any.whl&quot; is a Python wheel package for version 0.1.4 of the kg_gen library, which is likely used for generating knowledge graphs." />
+  </folder>
+  <folder name="tests">
+    <file name="test_basic.py" description="The file demonstrates how to use the KGGen class from the src.kg_gen module to generate a simple knowledge graph based on a text input by loading environment variables and utilizing an OpenAI API key." />
+    <file name="test_chunked.py" description="The file &#x27;test_chunked.py&#x27; demonstrates the use of the KGGen class to generate knowledge graphs from a wiki text file, comparing the outputs of graph generation with and without chunking while also printing the differences in entities, edges, and relationships between the two methods." />
+    <file name="test_basic_2.py" description="The file tests/test_basic_2.py initializes a KGGen instance to generate and aggregate individual knowledge graphs from provided family relationship texts, then clusters the combined graph and prints the entities, relations, edges, and their respective clusters for each graph." />
+    <file name="test_basic_convo.py" description="The file tests/test_basic_convo.py demonstrates the use of the KGGen class to generate a simple knowledge graph from a conversation, while loading environment variables for API access." />
+    <file name="test_gen_clus_agg.py" description="The file tests/test_gen_clus_agg.py tests the KGGen class by generating, aggregating, and clustering knowledge graphs based on family relationship texts, while printing out the entities, relations, edges, and clusters of both individual and combined graphs." />
+    <file name="test_chunk_and_cluster.py" description="This Python script tests the functionality of the `KGGen` class from the `src.kg_gen` module by loading environment variables, reading a fresh wiki article, and generating a graph of entities, edges, and relations using specified parameters." />
+    <file name="test_multiple_models.py" description="The file tests the functionality of the KGGen class by loading environment variables and generating knowledge graphs from a given text input using multiple language models and their respective API keys." />
+    <file name=".env.example" description="The file contains an example environment variable for setting an OpenAI API key." />
+    <file name="test_clustering.py" description="The file `test_clustering.py` contains a series of unit tests using pytest for the `KGGen` class&#x27;s clustering functionality implemented in the `src.kg_gen` module, which verifies the proper grouping of entities and edges in various scenarios, including basic clustering, case sensitivity, semantic similarity, and context-specific clustering, ensuring that configurations and constraints are handled correctly." />
+    <folder name="utils">
+      <file name="test_chunk_text.py" description="The file contains a set of unit tests for the `chunk_text` function that verifies its ability to chunk text according to specified limits, handling various scenarios including short and long sentences, multiple sentences, and ensuring no chunk exceeds the maximum character limit." />
+    </folder>
+    <folder name="data">
+      <file name="fresh_wiki_article.md" description="On June 2, 2023, a catastrophic train collision in Balasore, Odisha, involving the Coromandel Express, a goods train, and the SMVT Bengaluru-Howrah Superfast Express resulted in 296 fatalities and more than 1,200 injuries, marking it as one of the deadliest railway disasters in India&#x27;s history." />
+      <file name="kingkiller_chapter_one.txt" description="In the first chapter of &quot;The Name of the Wind,&quot; a small group of men gathers at the Waystone Inn, where they listen to Old Cob tell a tale about the legendary figure Taborlin the Great while a mysterious young innkeeper, Kote, quietly observes from the back, and the atmosphere becomes tense after a local man, Carter, arrives injured and brings news of a monstrous creature, raising fears of demons in their small town." />
+    </folder>
+  </folder>
+  <folder name="MINE">
+    <file name="evaluation.py" description="The `evaluation.py` file processes JSON graph data to evaluate the accuracy of answers against provided questions using embeddings and GPT-4 for contextual evaluation, leveraging nodes and relationships extracted from the graph representation." />
+    <file name="example.json" description="The file contains a collection of entities related to music&#x27;s emotional and physiological impacts, alongside their interconnections, highlighting how various genres and elements influence listeners&#x27; moods, experiences, and social bonds." />
+    <file name="README.md" description="The README.md file provides instructions for running the MINE program, including setting up an OpenAI key, generating knowledge graphs from essays, naming and organizing those graphs in a specific folder, and executing an evaluation script to produce result files." />
+    <file name="essays.json" description="The file &quot;essays.json&quot; contains a collection of essays covering a wide range of topics, including the life cycle of butterflies, urban legends, ethical dilemmas in AI, the evolution of video games, the role of bees in agriculture, and many more, each exploring their significance and impact on culture, society, and the environment." />
+  </folder>
+  <folder name="src">
+    <file name="__init__.py" description="The file `src/__init__.py` serves as an initializer for the `src` package, potentially defining package-level variables or importing necessary modules." />
+    <folder name="kg_gen">
+      <file name="models.py" description="The file defines a Pydantic model named `Graph`, which represents a graph structure with entities, edges, relations, and optional clusters, along with a validation method to ensure the consistency of these elements." />
+      <file name="__init__.py" description="The file imports the KGGen class from the kg_gen module and the Graph model from the models module." />
+      <file name="kg_gen.py" description="The `kg_gen.py` file defines a `KGGen` class designed to generate knowledge graphs from input text or messages, utilizing various methods to extract entities and relationships, support parallel processing, and allow for model configuration and clustering of the resulting graph." />
+      <folder name="utils">
+        <file name="__init__.py" description="The `__init__.py` file in the `src/kg_gen/utils` directory initializes the package and likely includes utility functions and classes for use in the knowledge graph generation process." />
+        <file name="chunk_text.py" description="The `chunk_text.py` file defines a script that chunks input text into smaller segments while respecting sentence boundaries and a specified maximum chunk size, using the Natural Language Toolkit (nltk) for sentence tokenization." />
+      </folder>
+      <folder name="steps">
+        <file name="_3_cluster_graph.py" description="The file defines a clustering mechanism for related items in a graph through various steps including extraction, validation, representation selection, and checking existing clusters, ultimately producing a clustered graph with updated relationships based on the input entities and edges." />
+        <file name="_1_get_entities.py" description="The file defines two classes, `TextEntities` and `ConversationEntities`, for extracting key subjects and objects from a given text or conversation, and includes a function `get_entities` that uses these classes to return a list of extracted entities based on the input data type." />
+        <file name="__init__.py" description="The file `__init__.py` in the `src/kg_gen/steps` directory initializes the package by managing imports and defining the structure for the module&#x27;s components." />
+        <file name="_2_get_relations.py" description="This file defines two classes, `TextRelations` and `ConversationRelations`, for extracting subject-predicate-object triples from given text or conversations by ensuring that the subjects and objects match a specified list of entities, along with a function `get_relations` that utilizes these classes to perform the extraction." />
+      </folder>
+    </folder>
+    <folder name="kg_gen.egg-info">
+      <file name="PKG-INFO" description="The `kg-gen` package is a Python tool designed to extract knowledge graphs from text or message arrays using language models, enabling various applications like analysis of relationships and structured data generation, and is compatible with multiple programming languages and dependencies." />
+      <file name="SOURCES.txt" description="The file lists the various source files and resources included in the kg_gen Python package, such as the README, configuration files, implementation scripts, utility modules, and test scripts." />
+      <file name="requires.txt" description="The file lists the dependencies required for the project, including dspy, nltk, and pydantic with a minimum version of 2.0.0." />
+      <file name="top_level.txt" description="The file lists the top-level package names for the `kg_gen` Python package, which includes `__init__` as a module." />
+      <file name="dependency_links.txt" description="The file contains a list of dependency links for the package &quot;kg_gen,&quot; indicating external dependencies required for its installation." />
+    </folder>
+  </folder>
+</directory>
